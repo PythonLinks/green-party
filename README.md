@@ -2,7 +2,7 @@
 
 The California Green Party is (hopefully) migrating off of closed
 source and expensive corporate NationBuilder hosted in the US's
-collapsing legal  jurisdition to open source technologies hosted in
+collapsing legal  jurisdiction to open source technologies hosted in
 privacy protecting Europe.  We hope that other US Green Parties follow suit. 
 
 The first step is to build the "landing pages" in WordPress, while
@@ -12,7 +12,7 @@ shortly. It is implemented usng Bootstrap.  Bootstrap is the most
 popular CSS library, and is supported by both WordPress and
 NationBuilder.
 
-This theme should support one, two and three column layout.  Two
+This theme should (eventually) support one, two and three column layout.  Two
 columns split the width between the two columns.  On cell phones, in
 two column layout, the second column gets pushed below the first
 column.  Three column layout gives 1/4 of the width to the first
@@ -56,7 +56,7 @@ theme or child theme.
 
 To make Bootstrap 4 work in older Internet Explorer (IE) please create child theme and use this css ( https://github.com/coliff/bootstrap-ie8 ) created by @Coliff.
 
-## More feature 
+## More features 
 
 **WordPress Menu** To display menu correctly, please create at least 1
 menu and set as primary and save.
