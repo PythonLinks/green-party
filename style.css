@@ -1,3 +1,5 @@
+
+
 /*
 Theme Name: Bootstrap Basic4
 Theme URI: https://rundiz.com
@@ -40,6 +42,7 @@ Required WordPress CSS
 .bypostauthor {
 }
 
+.entry-title {color:green} 
 
 /* WordPress gallery */
 .gallery-caption {
