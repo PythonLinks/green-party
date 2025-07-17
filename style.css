@@ -1,4 +1,8 @@
 
+//Styles for the California Green Party. 
+
+.entry-title {color:green} 
+p {text-align: justify;}
 
 /*
 Theme Name: Bootstrap Basic4
@@ -41,8 +45,6 @@ Required WordPress CSS
 }
 .bypostauthor {
 }
-
-.entry-title {color:green} 
 
 /* WordPress gallery */
 .gallery-caption {
