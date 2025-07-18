@@ -17,8 +17,11 @@ $show_button = true;
 if (isset($args['bootstrapbasic4']['show_button']) && is_bool($args['bootstrapbasic4']['show_button'])) {
     $show_button = $args['bootstrapbasic4']['show_button'];
 }
-?> 
-<form class="search-form form<?php echo $form_classes; ?>"<?php echo $aria_label; ?> role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
+
+?>
+<?php include "social.html"; ?>
+
+<form class="search-form form<?php echo $form_classes; ?>"<?php echo $aria_label; ?> role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>"> 
     <div class="input-group">
         <input class="form-control" type="search" name="s" value="<?php echo get_search_query(); ?>" placeholder="<?php esc_attr_e('Search &hellip;', 'bootstrap-basic4'); ?>" title="<?php esc_attr_e('Search &hellip;', 'bootstrap-basic4'); ?>">
         <?php if (true === $show_button) { ?> 

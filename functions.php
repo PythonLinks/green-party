@@ -70,3 +70,11 @@ unset($WidgetHooks);
 $ThemeHelp = new \BootstrapBasic4\Controller\ThemeHelp();
 $ThemeHelp->addActionsFilters();
 unset($ThemeHelp);
+
+
+function weplugins_execute_on_dynamic_sidebar_before_event($index, $has_widgets) {
+    echo  file_get_contents(get_template_directory() . '/social.html');
+;
+}
+
+add_action('dynamic_sidebar_before', 'weplugins_execute_on_dynamic_sidebar_before_event', 10, 2);

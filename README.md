@@ -22,6 +22,8 @@ pushed below.  On cell phones, with 3 column layout, the middle column
 is shown first, the first column is shown next, and the third column
 is shown last.
 
+use pug to convert pug scripts to html. Simplifies life hugely. 
+
 Here is the original README. 
 # Bootstrap Basic4
 

@@ -33,7 +33,7 @@ if (!is_scalar($container_class) || empty($container_class)) {
         <div class="<?php echo $container_class; ?> page-container">
             <header class="page-header page-header-sitebrand-topbar">
 
-            <?php include 'cagreens/cagreensmenu.php';?>
+            <?php include 'cagreens/menu.html';?>
             </header><!--.page-header-->
 
             <div id="content" class="site-content row row-with-vspace">
