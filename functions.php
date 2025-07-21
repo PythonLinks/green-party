@@ -11,6 +11,26 @@
  * @package bootstrap-basic4
  */
 
+/**
+ * Register Custom Navigation Walker
+ */
+function register_navwalker(){
+if ( ! file_exists( get_template_directory() . '/class-wp-bootstrap-navwalker.php' ) ) {
+    // File does not exist... return an error.
+    return new WP_Error( 'class-wp-bootstrap-navwalker-missing', __( 'It appears the class-wp-bootstrap-navwalker.php file may be missing.', 'wp-bootstrap-navwalker' ) );
+}
+    else {
+    // File exists... require it.
+    require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+}
+}
+
+if (! has_nav_menu( 'primary')){
+   register_nav_menus( array(
+    'primary' => __( 'Primary Menu', 'green-party' ),
+) );}
+
+add_action( 'after_setup_theme', 'register_navwalker' );
 
 // Required WordPress variable
 if (!isset($content_width)) {
@@ -73,7 +93,7 @@ unset($ThemeHelp);
 
  function weplugins_execute_on_dynamic_sidebar_before_event($index, $has_widgets) {
         if ($index === 'sidebar-left') {
-            $social_file = get_template_directory() . '/social.html';
+            $social_file = get_template_directory() . '/cagreens/social.html';
             if (file_exists($social_file)) {
                 echo file_get_contents($social_file);
             }
@@ -82,3 +102,51 @@ unset($ThemeHelp);
 
 
 add_action('dynamic_sidebar_before', 'weplugins_execute_on_dynamic_sidebar_before_event', 10, 2);
+
+function get_logo_html() {
+    // Query for attachment with exact title "Logo"
+    $logo = get_posts(array(
+        'post_type'      => 'attachment',
+        'title'          => 'Logo',
+        'posts_per_page' => 1,
+        'post_status'    => 'inherit'
+    ));
+
+    // Exit if no logo found
+    if (empty($logo)) {
+        return '';
+    }
+
+    $logo_id = $logo[0]->ID;
+    
+    // Get image source data
+    $logo_src = wp_get_attachment_image_src($logo_id, 'full');
+    if (!$logo_src) {
+        return '';
+    }
+
+    // Extract image properties
+    list($src, $width, $height) = $logo_src;
+    
+    // Get alt text (always include, even if empty)
+    $alt_text = get_post_meta($logo_id, '_wp_attachment_image_alt', true);
+    
+    // Get attachment title (for optional title attribute)
+    $attachment_title = get_the_title($logo_id);
+    
+    // Start building image tag
+    $html = '<img src="' . esc_url($src) . '" width="' . esc_attr($width) . '" height="' . esc_attr($height) . '" alt="' . esc_attr($alt_text) . '"';
+    
+    // Add title attribute only if it exists and is not empty
+    if (!empty($attachment_title)) {
+        $html .= ' title="' . esc_attr($attachment_title) . '"';
+    }
+    
+    $html .= '>';
+
+    return $html;
+}
+
+include "gp-create-menus.php";
+include "theme-options.php";
+//<?php echo get_logo_html(); ?>
