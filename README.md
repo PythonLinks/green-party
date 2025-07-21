@@ -1,4 +1,13 @@
-# WordPress and NationBuilder Bootstrap theme
+# Green Party WordPress theme
+
+This is a theme for Green Party candidates and parties.  You can host
+it on yourself at your favorite hosting company.  We also offer
+volunteer managed WordPress DreamHost hosting at cost (~$10/month) to
+local parties and candidates.  This theme plays well with
+NationBuilder and with [GreenMaps](https://greenmaps.us).  It is
+initially being used to replace the California Green Party website
+with one which works well on cell phones.  Other sites should be
+released shortly.
 
 The California Green Party is (hopefully) migrating off of closed
 source and expensive corporate NationBuilder hosted in the US's
@@ -12,19 +21,18 @@ shortly. It is implemented usng Bootstrap.  Bootstrap is the most
 popular CSS library, and is supported by both WordPress and
 NationBuilder.
 
-This theme should (eventually) support one, two and three column layout.  Two
-columns split the width between the two columns.  On cell phones, in
-two column layout, the second column gets pushed below the first
-column.  Three column layout gives 1/4 of the width to the first
-column, 1/2 to the middle column, and the remaining 1/4 to the third
-column.  On tablets, with 3 column layout, the right column gets
-pushed below.  On cell phones, with 3 column layout, the middle column
-is shown first, the first column is shown next, and the third column
-is shown last.
+This theme supports right and left columns with WordPress widgets.  On
+tablets, the right column gets pushed below.  On cell phones, the
+middle column is shown first, the first column is shown next, and the
+third column is shown last.
 
-use pug to convert pug scripts to html. Simplifies life hugely. 
+The default version allows the end users to customize the menus. Menus
+for new web sites are expected to change often.  The California Green
+Party version has very large and complex menus, which would be slow to
+generate on every page load, so they hardcoded using PUG.  They are
+not expected to change often.
 
-Here is the original README. 
+Here is the original README from the base theme.  
 # Bootstrap Basic4
 
 Contributors: okvee, christianoliff
