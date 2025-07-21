@@ -1,13 +1,12 @@
 # Green Party WordPress theme
 
-This is a theme for Green Party candidates and parties.  You can host
-it on yourself at your favorite hosting company.  We also offer
-volunteer managed WordPress DreamHost hosting at cost (~$10/month) to
-local parties and candidates.  This theme plays well with
-NationBuilder and with [GreenMaps](https://greenmaps.us).  It is
-initially being used to replace the California Green Party website
-with one which works well on cell phones.  Other sites should be
-released shortly.
+This is an open source WordPress theme for Green Party candidates and
+parties.  We also offer volunteer managed WordPress DreamHost hosting
+at cost (~$10/month) to local parties and candidates.  This theme
+plays well with NationBuilder and with
+[GreenMaps](https://greenmaps.us).  It is initially being used to
+replace the California Green Party website with one which works well
+on cell phones.  Other sites should be released shortly.
 
 The California Green Party is (hopefully) migrating off of closed
 source and expensive corporate NationBuilder hosted in the US's
@@ -29,7 +28,7 @@ third column is shown last.
 The default version allows the end users to customize the menus. Menus
 for new web sites are expected to change often.  The California Green
 Party version has very large and complex menus, which would be slow to
-generate on every page load, so they hardcoded using PUG.  They are
+generate on every page load, so they are hardcoded using PUG.  They are
 not expected to change often.
 
 Here is the original README from the base theme.  
