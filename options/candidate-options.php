@@ -1,5 +1,13 @@
 <?php
 function green_party_candidate_customizer($wp_customize) {
+     $org_type = get_theme_mod('organization_type');
+
+    // Only display this form, if this is a candidate
+    if ($org_type !== 'candidate') {
+        return;;
+    }
+
+
     // Create Candidate Section
     $wp_customize->add_section('green_party_candidate_section', array(
         'title'    => __('Candidate Information', 'green-party'),

@@ -11,13 +11,13 @@
 // Add Version option to Theme Customizer
 function add_version_customizer_option($wp_customize) {
     // Add new section
-    $wp_customize->add_section('version_section', array(
+    $wp_customize->add_section('organization_section', array(
         'title'    => __('Your Organization', 'text-domain'),
         'priority' => 30,
     ));
 
     // Add setting with sanitization
-    $wp_customize->add_setting('version_option', array(
+    $wp_customize->add_setting('organization_type', array(
         'default'           => 'candidate',
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_version_option',
@@ -30,10 +30,9 @@ function add_version_customizer_option($wp_customize) {
         'settings' => 'version_option',
         'type'     => 'select',
         'choices'  => array(
-            'local-party'      => __('Local Party', 'text-domain'),
-            'state-party'      => __('State Party', 'text-domain'),	    
-            'candidate'  => __('Candidate Site', 'text-domain'),
-            'california' => __('California Green Party', 'text-domain'),
+            'local_party' => __('Local Party', 'text-domain'),
+            'state_party' => __('State Party', 'text-domain'),	    
+            'candidate'   => __('Candidate Site', 'text-domain'),
         ),
     ));
 }
@@ -41,7 +40,7 @@ add_action('customize_register', 'add_version_customizer_option');
 
 // Sanitization function
 function sanitize_version_option($input) {
-    $valid_options = array('party', 'candidate', 'california');
+    $valid_options = array('candidate', 'local_party', 'state_party');
     return in_array($input, $valid_options) ? $input : 'candidate';
 }
 
