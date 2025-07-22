@@ -148,5 +148,6 @@ function get_logo_html() {
 }
 
 include "gp-create-menus.php";
-include "theme-options.php";
+include "options/theme-options.php";
+include "options/candidate-options.php";
 //<?php echo get_logo_html(); ?>
