@@ -9,9 +9,8 @@
 
 // begins template. -------------------------------------------------------------------------
 get_header();
-get_sidebar();
 ?> 
-                <main id="main" class="col-md-9 col-lg-6  order-6 site-main" role="main">
+                <main id="main" class="site-main" role="main">
                     <?php
                     if (have_posts()) {
                         $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
@@ -38,5 +37,4 @@ get_sidebar();
                     ?> 
                 </main>
 <?php
-get_sidebar('right');
 get_footer();

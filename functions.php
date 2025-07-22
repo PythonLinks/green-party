@@ -147,7 +147,7 @@ function get_logo_html() {
     return $html;
 }
 
-include "gp-create-menus.php";
+
 include "options/theme-options.php";
 include "options/candidate-options.php";
 //<?php echo get_logo_html(); ?>

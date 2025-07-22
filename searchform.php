@@ -19,7 +19,6 @@ if (isset($args['bootstrapbasic4']['show_button']) && is_bool($args['bootstrapba
 }
 
 ?>
-<?php include "cagreens/social.html"; ?>
 
 <form class="search-form form<?php echo $form_classes; ?>"<?php echo $aria_label; ?> role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>"> 
     <div class="input-group">
