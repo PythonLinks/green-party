@@ -1,7 +1,8 @@
 <?php
 function green_party_candidate_customizer($wp_customize) {
-     $org_type = get_theme_mod('organization_type');
-
+     $org_type = get_theme_mod('organization_option');
+     echo $org_type;
+     
     // Only display this form, if this is a candidate
     if ($org_type !== 'candidate') {
         return;;
