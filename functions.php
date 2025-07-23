@@ -25,10 +25,7 @@ if ( ! file_exists( get_template_directory() . '/class-wp-bootstrap-navwalker.ph
 }
 }
 
-if (! has_nav_menu( 'primary')){
-   register_nav_menus( array(
-    'primary' => __( 'Primary Menu', 'green-party' ),
-) );}
+
 
 add_action( 'after_setup_theme', 'register_navwalker' );
 
@@ -147,7 +144,7 @@ function get_logo_html() {
     return $html;
 }
 
-
+include "create-menu.php";
 include "options/theme-options.php";
 include "options/candidate-options.php";
 //<?php echo get_logo_html(); ?>
