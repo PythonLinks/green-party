@@ -2,7 +2,7 @@
 
 This is an open source WordPress theme for Green Party candidates and
 parties.  We also offer volunteer managed WordPress DreamHost hosting
-at cost (~$10/month) to local parties and candidates.  This theme
+at cost, or less,  to local parties and candidates.  This theme
 plays well with NationBuilder and with
 [GreenMaps](https://greenmaps.us).  It is initially being used to
 replace the California Green Party website with one which works well
