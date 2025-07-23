@@ -1,5 +1,7 @@
 
 //Styles for the Green Party Theme. 
+body {padding: 20px;}
+body {margin: 20px ! important}
 
 .entry-title {color:green} 
 p {text-align: justify;}
