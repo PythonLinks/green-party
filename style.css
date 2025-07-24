@@ -3,7 +3,8 @@
 body {padding: 20px;}
 body {margin: 20px ! important}
 
-.entry-title {color:green} 
+.entry-title {color:green;
+		    text-align:center;} 
 p {text-align: justify;}
 #follow-us {
     margin-right: 8px;
