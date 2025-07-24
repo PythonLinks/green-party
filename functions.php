@@ -144,7 +144,8 @@ function get_logo_html() {
     return $html;
 }
 
-include "create-menus-carefully.php";
-include "options/theme-options.php";
-include "options/candidate-options.php";
+include "deepseek/create-menus-carefully.php";
+include "deepseek/get-icon-html.php"; 
+include "deepseek/theme-options.php";
+include "deepseek/candidate-options.php";
 //<?php echo get_logo_html(); ?>
