@@ -32,10 +32,54 @@ function add_version_customizer_option($wp_customize) {
         'choices'  => array(
             'local-party'      => __('Local Party', 'text-domain'),
             'state-party'      => __('State Party', 'text-domain'),	    
-            'candidate'  => __('Candidate Site', 'text-domain'),
-            'california' => __('California Green Party', 'text-domain'),
+            'candidate'  => __('Candidate', 'text-domain'),
         ),
     ));
+
+
+    // Video Embed (textarea)
+    $wp_customize->add_setting('organization_video');
+    $wp_customize->add_control('organization_video_control', array(
+        'label'       => __('Video', 'green-party'),
+        'description' => __('The embed code for their video', 'green-party'),
+        'section'     => 'organization_section',
+        'settings'    => 'organization_video',
+        'type'        => 'textarea',
+    ));
+
+    // Events Page URL
+    $wp_customize->add_setting('organization_eventsPageURL');
+    $wp_customize->add_control('organization_eventsPageURL_control', array(
+        'label'       => __('Events Page URL', 'green-party'),
+        'description' => __('Please include "https://"', 'green-party'),
+        'section'     => 'organization_section',
+        'settings'    => 'organization_eventsPageURL',
+        'type'        => 'url',
+    ));
+
+    // Has Future Events (checkbox)
+    $wp_customize->add_setting('organization_hasScheduledEvents', array(
+        'default' => false,
+    ));
+    $wp_customize->add_control('organization_hasScheduledEvents_control', array(
+        'label'       => __('Has Future Event?', 'green-party'),
+        'description' => __('If so they will show up on the map', 'green-party'),
+        'section'     => 'organization_section',
+        'settings'    => 'organization_hasScheduledEvents',
+        'type'        => 'checkbox',
+    ));
+
+    // Donations Page URL
+    $wp_customize->add_setting('organization_donationsPageURL');
+    $wp_customize->add_control('organization_donationsPageURL_control', array(
+        'label'       => __('Donations Page URL', 'green-party'),
+        'description' => __('Please include "https://"', 'green-party'),
+        'section'     => 'organization_section',
+        'settings'    => 'organization_donationsPageURL',
+        'type'        => 'url',
+    ));
+
+
 }
 add_action('customize_register', 'add_version_customizer_option');
 

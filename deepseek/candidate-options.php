@@ -1,7 +1,7 @@
 <?php
 function green_party_candidate_customizer($wp_customize) {
      $org_type = get_theme_mod('organization_option');
-     echo $org_type;
+     //echo $org_type;
      
     // Only display this form, if this is a candidate
     if ($org_type !== 'candidate') {
@@ -92,47 +92,6 @@ function green_party_candidate_customizer($wp_customize) {
         ),
     ));
 
-    // Video Embed (textarea)
-    $wp_customize->add_setting('green_party_candidate_video');
-    $wp_customize->add_control('green_party_candidate_video_control', array(
-        'label'       => __('Video', 'green-party'),
-        'description' => __('The embed code for their video', 'green-party'),
-        'section'     => 'green_party_candidate_section',
-        'settings'    => 'green_party_candidate_video',
-        'type'        => 'textarea',
-    ));
-
-    // Events Page URL
-    $wp_customize->add_setting('green_party_candidate_eventsPageURL');
-    $wp_customize->add_control('green_party_candidate_eventsPageURL_control', array(
-        'label'       => __('Events Page URL', 'green-party'),
-        'description' => __('Please include "https://"', 'green-party'),
-        'section'     => 'green_party_candidate_section',
-        'settings'    => 'green_party_candidate_eventsPageURL',
-        'type'        => 'url',
-    ));
-
-    // Has Future Events (checkbox)
-    $wp_customize->add_setting('green_party_candidate_hasScheduledEvents', array(
-        'default' => false,
-    ));
-    $wp_customize->add_control('green_party_candidate_hasScheduledEvents_control', array(
-        'label'       => __('Has Future Event?', 'green-party'),
-        'description' => __('If so they will show up on the map', 'green-party'),
-        'section'     => 'green_party_candidate_section',
-        'settings'    => 'green_party_candidate_hasScheduledEvents',
-        'type'        => 'checkbox',
-    ));
-
-    // Donations Page URL
-    $wp_customize->add_setting('green_party_candidate_donationsPageURL');
-    $wp_customize->add_control('green_party_candidate_donationsPageURL_control', array(
-        'label'       => __('Donations Page URL', 'green-party'),
-        'description' => __('Please include "https://"', 'green-party'),
-        'section'     => 'green_party_candidate_section',
-        'settings'    => 'green_party_candidate_donationsPageURL',
-        'type'        => 'url',
-    ));
 
     // Election Result
     $wp_customize->add_setting('green_party_candidate_result', array(
