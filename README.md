@@ -1,37 +1,44 @@
 # Green Party WordPress theme
 
-This is an open source WordPress theme for Green Party candidates and
-parties.  We also offer volunteer managed WordPress DreamHost hosting
-at cost, or less,  to local parties and candidates.  This theme
+This is an open source WordPress theme for local and state Green
+Parties and candidates.  The idea is that everyone should have an
+instant website, the day that they declare. We also offer volunteer
+managed DreamHost WordPress hosting at cost, or less.  This theme
 plays well with NationBuilder and with
-[GreenMaps](https://greenmaps.us).  It is initially being used to
-replace the California Green Party website with one which works well
-on cell phones.  Other sites should be released shortly.
+[GreenMaps](https://greenmaps.us).
 
-The California Green Party is (hopefully) migrating off of closed
-source and expensive corporate NationBuilder hosted in the US's
-collapsing legal  jurisdiction to open source technologies hosted in
-privacy protecting Europe.  We hope that other US Green Parties follow suit. 
+Here is the live site for the California Green Party's ```cagreens```
+branch of the repository.  It is under review for adoption. The
+exising [California Green Party web site[(https://cagreens.org) has
+too many problems to list. We are just about to release 3 more demo
+web sites, with a more modern scrolling theme, for local and state
+parties and candidates.  
 
-The first step is to build the "landing pages" in WordPress, while
-leaving the "database pages" in NationBuilder.  This theme should work
-across platforms, and is expected to be ported to NationBuilder
-shortly. It is implemented usng Bootstrap.  Bootstrap is the most
-popular CSS library, and is supported by both WordPress and
-NationBuilder.
+This theme is built on bootstrap 4.  Twitter Bootstrap is the leading
+CSS library. The newer green-party branch allows the end users to
+customize the menus. Menus for new web sites are expected to change
+often.  The California Green Party (cagreens) branch has very large
+and complex menus, which would be slow to generate on every page load,
+so they are hardcoded using PUG.  They are not expected to change
+often.
 
-This theme supports right and left columns with WordPress widgets.  On
-tablets, the right column gets pushed below.  On cell phones, the
-middle column is shown first, the first column is shown next, and the
-third column is shown last.
+## Configuration
+The site is configured using the default WordPress Customizer panel.
 
-The default version allows the end users to customize the menus. Menus
-for new web sites are expected to change often.  The California Green
-Party version has very large and complex menus, which would be slow to
-generate on every page load, so they are hardcoded using PUG.  They are
-not expected to change often.
+```WordPress Admin->Appearance->Customize->Organization```
 
-Here is the original README from the base theme.  
+And then depending on the options you chose either customize the
+candidate or the party forms. 
+
+```WordPress Admin->Appearance->Customize->Candidate```
+or
+```WordPress Admin->Appearance->Customize->Party```                            
+ 
+The candidate photo should be loaded as the site default image.  Tech
+support is privided on [the Green Party Tech Discord
+Server](https://discord.gg/keMrNVCu7F)
+
+Here is the original README from the base bootstrap-basic4 theme.  
 # Bootstrap Basic4
 
 Contributors: okvee, christianoliff

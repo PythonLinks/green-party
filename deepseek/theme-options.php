@@ -35,20 +35,10 @@ function add_version_customizer_option($wp_customize) {
             'candidate'  => __('Candidate', 'text-domain'),
         ),
     ));
-
-
-    // Video Embed (textarea)
-    $wp_customize->add_setting('organization_video');
-    $wp_customize->add_control('organization_video_control', array(
-        'label'       => __('Video', 'green-party'),
-        'description' => __('The embed code for their video', 'green-party'),
-        'section'     => 'organization_section',
-        'settings'    => 'organization_video',
-        'type'        => 'textarea',
-    ));
-
+    
     // Events Page URL
-    $wp_customize->add_setting('organization_eventsPageURL');
+    $wp_customize->add_setting('organization_eventsPageURL',array(
+            'capability'        => 'edit_theme_options',));
     $wp_customize->add_control('organization_eventsPageURL_control', array(
         'label'       => __('Events Page URL', 'green-party'),
         'description' => __('Please include "https://"', 'green-party'),
@@ -56,27 +46,50 @@ function add_version_customizer_option($wp_customize) {
         'settings'    => 'organization_eventsPageURL',
         'type'        => 'url',
     ));
-
-    // Has Future Events (checkbox)
-    $wp_customize->add_setting('organization_hasScheduledEvents', array(
-        'default' => false,
-    ));
-    $wp_customize->add_control('organization_hasScheduledEvents_control', array(
-        'label'       => __('Has Future Event?', 'green-party'),
-        'description' => __('If so they will show up on the map', 'green-party'),
+    
+    // Discord volunteer Channel URL
+    $wp_customize->add_setting('organization_discord_volunteer_channel_URL',array(
+            'capability'        => 'edit_theme_options',));
+    $wp_customize->add_control('organization_discord_volunteer_channel_URL_control', array(
+        'label'       => __('Discord Volunteer Channel URL', 'green-party'),
+        'description' => __('Please include "https://"', 'green-party'),
         'section'     => 'organization_section',
-        'settings'    => 'organization_hasScheduledEvents',
-        'type'        => 'checkbox',
+        'settings'    => 'organization_discord_volunteer_channel_URL',
+        'type'        => 'url',
     ));
 
     // Donations Page URL
-    $wp_customize->add_setting('organization_donationsPageURL');
+    $wp_customize->add_setting('organization_donationsPageURL',array(
+        'capability'        => 'edit_theme_options',));
     $wp_customize->add_control('organization_donationsPageURL_control', array(
         'label'       => __('Donations Page URL', 'green-party'),
         'description' => __('Please include "https://"', 'green-party'),
         'section'     => 'organization_section',
         'settings'    => 'organization_donationsPageURL',
         'type'        => 'url',
+    ));
+
+    // Register To Vote URL
+    $wp_customize->add_setting('organization_register_to_vote_URL',array(
+        'capability'        => 'edit_theme_options',));
+    $wp_customize->add_control('organization_register_to_vote_URL__control', array(
+        'label'       => __('Register To Vote URL', 'green-party'),
+        'description' => __('Please include "https://"', 'green-party'),
+        'section'     => 'organization_section',
+        'settings'    => 'organization_register_to_vote_URL',
+        'type'        => 'url',
+    ));
+
+
+    // Video Embed (textarea)
+    $wp_customize->add_setting('organization_video',array(
+            'capability'        => 'edit_theme_options',));
+    $wp_customize->add_control('organization_video_control', array(
+        'label'       => __('Video', 'green-party'),
+        'description' => __('The embed code for their video', 'green-party'),
+        'section'     => 'organization_section',
+        'settings'    => 'organization_video',
+        'type'        => 'textarea',
     ));
 
 
