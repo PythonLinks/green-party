@@ -99,9 +99,9 @@ function create_green_party_menu(){
      $menu_name = 'Green Party Menu';
  
     // Check if the menu already exists
-    $menu = wp_get_nav_menu_object($menu_name);
+    $menuExists = wp_get_nav_menu_object($menu_name);
     
-    if (!$menu) {
+    if (!$menuExists) {
     // Create main menu
     $menu_id = green_party_create_menu();
 
@@ -114,15 +114,15 @@ function create_green_party_menu(){
                  $menu_id,'Platform');
     		 
     // Add items to Platform
-    $docs_id = green_party_create_submenu_item($menu_id,
-                                               $platform_id,
-					       '10 Key Values',
-					       '/10-key-values');
+    green_party_create_submenu_item($menu_id,
+                                    $platform_id,
+			            '10 Key Values',
+			             '/10-key-values');
 					       
-    $docs_id = green_party_create_submenu_item($menu_id,
-                                               $platform_id,
-					       '4 Pillars',
-					       '/4-pillars');
+    green_party_create_submenu_item($menu_id,
+                                    $platform_id,
+			            '4 Pillars',
+			            '/4-pillars');
     
    // Take Action 
     $take_action_id = green_party_create_dropdown_container(
@@ -142,13 +142,13 @@ function create_green_party_menu(){
 				    '[donations_Page_URL]');     
     
     // Top Level Contact Link
-    $contact_id = green_party_create_top_level_item($menu_id,
+    green_party_create_top_level_item($menu_id,
                                                  'Contact',
 					     '/contact');
-    
     $locations = get_theme_mod('nav_menu_locations');
     $locations['primary-menu'] = $menu_id;
-    set_theme_mod( 'nav_menu_locations', $locations );
+    set_theme_mod( 'nav_menu_locations', $locations );					     
+    // register_nav_menus( 'primary', 'Green Party Menu');
 
    }
 }
