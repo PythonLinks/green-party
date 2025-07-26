@@ -8,11 +8,8 @@ plays well with NationBuilder and with
 [GreenMaps](https://greenmaps.us).
 
 This theme is built on bootstrap 4.  Twitter Bootstrap is the leading
-CSS library. The newer green-party branch allows the end users to
+CSS library. The master `green-party` branch allows the end users to
 customize the menus. Menus for new web sites are expected to change
-often.  The California Green Party (cagreens) branch has very large
-and complex menus, which would be slow to generate on every page load,
-so they are hardcoded using PUG.  They are not expected to change
 often.
 
 ## Configuration
@@ -27,8 +24,9 @@ candidate or the party forms.
 or
 ```WordPress Admin->Appearance->Customize->Party```                            
  
-The candidate photo should be loaded as the site default image.  Tech
-support is privided on [the Green Party Tech Discord
+The candidate photo should be loaded as the site default image.
+
+Tech support is provided on [the Green Party Tech Discord
 Server](https://discord.gg/keMrNVCu7F)
 
 Here is the original README from the base bootstrap-basic4 theme.  

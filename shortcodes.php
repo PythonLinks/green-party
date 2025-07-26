@@ -1,4 +1,14 @@
 <?php
+
+/**
+ * Enable shortcodes for menu navigation.
+ */
+if ( ! has_filter( 'wp_nav_menu', 'do_shortcode' ) ) {
+    add_filter( 'wp_nav_menu', 'shortcode_unautop' );
+    add_filter( 'wp_nav_menu', 'do_shortcode', 11 );
+}
+
+
     //Create the shortcodes. 
 
     function gpt_get_candidate_title(){
