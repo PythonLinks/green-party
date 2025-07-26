@@ -18,7 +18,7 @@ function add_version_customizer_option($wp_customize) {
 
     // Add setting with sanitization
     $wp_customize->add_setting('organization_organization_type', array(
-        'default'           => 'candidate',
+        'default'           => '',
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_organization_organization_type',
     ));

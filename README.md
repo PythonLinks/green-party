@@ -17,14 +17,17 @@ The site is configured using the default WordPress Customizer panel.
 
 ```WordPress Admin->Appearance->Customize->Organization```
 
-And then depending on the options you chose either customize the
-candidate or the party forms. 
+And then depending on the options you chose either additional forms
+will appear to customize either the candidate or the party.
 
 ```WordPress Admin->Appearance->Customize->Candidate```
 or
 ```WordPress Admin->Appearance->Customize->Party```                            
  
 The candidate photo should be loaded as the site default image.
+
+You probably want to edit your contact page.  That could not be
+automated.  Everyone wants to be contacted differently.
 
 Tech support is provided on [the Green Party Tech Discord
 Server](https://discord.gg/keMrNVCu7F)
