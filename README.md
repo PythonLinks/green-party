@@ -7,13 +7,6 @@ managed DreamHost WordPress hosting at cost, or less.  This theme
 plays well with NationBuilder and with
 [GreenMaps](https://greenmaps.us).
 
-Here is the live site for the California Green Party's ```cagreens```
-branch of the repository.  It is under review for adoption. The
-exising [California Green Party web site[(https://cagreens.org) has
-too many problems to list. We are just about to release 3 more demo
-web sites, with a more modern scrolling theme, for local and state
-parties and candidates.  
-
 This theme is built on bootstrap 4.  Twitter Bootstrap is the leading
 CSS library. The newer green-party branch allows the end users to
 customize the menus. Menus for new web sites are expected to change
