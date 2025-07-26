@@ -7,12 +7,30 @@
 // purpose, commercial or non-commercial, without any restrictions or
 // attribution requirements.
 
+
+
+
 // Create a new menu if it doesn't exist
- function green_party_create_menu($menu_name = 'Green Party Menu') {
+ function green_party_create_menu(
+    $menu_name = 'Green Party Menu') {
+ 
+    // Check if the menu already exists
     $menu = wp_get_nav_menu_object($menu_name);
     
     if (!$menu) {
-        return wp_create_nav_menu($menu_name);
+      $new_menu =  wp_create_nav_menu($menu_name);
+
+    $menu_location = 'primary';
+
+    // Register the primary menu location
+    register_nav_menu('primary', __('Primary Menu'));
+    
+    // Set menu location (overwrites existing primary menu)
+    $locations = (array) get_theme_mod('nav_menu_locations');
+    $locations[$menu_location] = $menu->term_id ?? $menu_id;
+    set_theme_mod('nav_menu_locations', $locations);
+
+        return $new_menu ;
     }
     return $menu->term_id;
 }
@@ -77,22 +95,64 @@ function green_party_create_submenu_item($menu_id,
     return wp_update_nav_menu_item($menu_id, 0, $item_data);
 }
 
-// Create main menu
-$menu_id = green_party_create_menu();
+function create_green_party_menu(){
+     $menu_name = 'Green Party Menu';
+ 
+    // Check if the menu already exists
+    $menu = wp_get_nav_menu_object($menu_name);
+    
+    if (!$menu) {
+    // Create main menu
+    $menu_id = green_party_create_menu();
 
-// Create regular top-level link
-$home_id = green_party_create_top_level_item($menu_id,
-                                             'Platform',
-					     '/platform');
+    // Top Level Home Link
+    green_party_create_top_level_item($menu_id,
+                                  'Home',
+    			           '/');
+				   
+    $platform_id = green_party_create_dropdown_container(
+                 $menu_id,'Platform');
+    		 
+    // Add items to Platform
+    $docs_id = green_party_create_submenu_item($menu_id,
+                                               $platform_id,
+					       '10 Key Values',
+					       '/10-key-values');
+					       
+    $docs_id = green_party_create_submenu_item($menu_id,
+                                               $platform_id,
+					       '4 Pillars',
+					       '/4-pillars');
+    
+   // Take Action 
+    $take_action_id = green_party_create_dropdown_container(
+                 $menu_id,'Take Action');
+    
+     green_party_create_submenu_item($menu_id,
+                                     $take_action_id,
+				     'Register To Vote',
+				     '[register_to_vote_URL]');
+     green_party_create_submenu_item($menu_id,
+                                     $take_action_id,
+				     'Volunteer',
+				     '/volunteer');
+     green_party_create_submenu_item($menu_id,
+                                    $take_action_id,
+				    'Donate',
+				    '[donations_Page_URL]');     
+    
+    // Top Level Contact Link
+    $contact_id = green_party_create_top_level_item($menu_id,
+                                                 'Contact',
+					     '/contact');
+    
+    $locations = get_theme_mod('nav_menu_locations');
+    $locations['primary-menu'] = $menu_id;
+    set_theme_mod( 'nav_menu_locations', $locations );
 
-
-// Create dropdown container
-$resources_id = green_party_create_dropdown_container($menu_id,'Take Action');
-
-// Add items to dropdown
-$docs_id = green_party_create_submenu_item($menu_id, $resources_id, '10 Key Values', '/10-key-values');
-$docs_id = green_party_create_submenu_item($menu_id, $resources_id, '4 Pillars', '/4-pillars');
-
+   }
+}
+add_action('after_setup_theme', 'create_green_party_menu');
 
 ?>
 
