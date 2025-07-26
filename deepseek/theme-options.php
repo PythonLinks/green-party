@@ -17,17 +17,17 @@ function add_version_customizer_option($wp_customize) {
     ));
 
     // Add setting with sanitization
-    $wp_customize->add_setting('organization_option', array(
+    $wp_customize->add_setting('organization_organization_type', array(
         'default'           => 'candidate',
         'capability'        => 'edit_theme_options',
-        'sanitize_callback' => 'sanitize_organization_option',
+        'sanitize_callback' => 'sanitize_organization_organization_type',
     ));
 
     // Add control with choices
     $wp_customize->add_control('version_control', array(
         'label'    => __('Select Version', 'text-domain'),
         'section'  => 'organization_section',
-        'settings' => 'organization_option',
+        'settings' => 'organization_organization_type',
         'type'     => 'select',
         'choices'  => array(
             'local-party'      => __('Local Party', 'text-domain'),
@@ -97,7 +97,7 @@ function add_version_customizer_option($wp_customize) {
 add_action('customize_register', 'add_version_customizer_option');
 
 // Sanitization function
-function sanitize_organization_option($input) {
+function sanitize_organization_organization_type($input) {
     $valid_options = array('local-party', 'state-party', 'candidate');
     return in_array($input, $valid_options) ? $input : 'candidate';
 }

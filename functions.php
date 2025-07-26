@@ -148,4 +148,5 @@ include "deepseek/create-menus-carefully.php";
 include "deepseek/get-icon-html.php"; 
 include "deepseek/theme-options.php";
 include "deepseek/candidate-options.php";
+include "shortcodes.php";
 //<?php echo get_logo_html(); ?>
