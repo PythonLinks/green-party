@@ -8,7 +8,8 @@
        </div><!--.site-content-->
 <footer>
       <div class = "aligncenter" style = "border-top: 3px solid #ddd;">
-      Powered by <a href="https://wordpress.org" rel="nofollow">WordPress</a> | Theme: <a href="https://github.com/PythonLinks/green-party" rel="nofollow">Green Party Theme</a> | Developed By: <a href="https://discord.gg/keMrNVCu7F" rel="nofollow">Green Party Tech</a> 
+      Powered by <a href="https://wordpress.org" rel="nofollow">WordPress</a>
+      | <a href="https://github.com/PythonLinks/green-party-theme" rel="nofollow">Green Party Theme</a> | Developed By: <a href="https://discord.gg/keMrNVCu7F" rel="nofollow">Green Party Tech</a> 
       </div>
 </footer>
 
