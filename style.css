@@ -4,7 +4,11 @@
 .centered-image{margin:auto;}
 body {padding: 20px;}
 body {margin: 20px ! important}
-
+p {max-width: 60 em ;
+   margin-right: auto ! important;
+   margin-left:auto ! important;
+   text-align: justify;
+  }
 .entry-title {color:green;
 		    text-align:center;} 
 p {text-align: justify;}
