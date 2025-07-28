@@ -6,7 +6,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="/">
-       <?php echo green_party_display_site_icon(); ?>
+       <?php echo gpt_display_site_icon(); ?>
    </a>
         <?php
         wp_nav_menu( array(

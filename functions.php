@@ -14,7 +14,7 @@
 /**
  * Register Custom Navigation Walker
  */
-function register_navwalker(){
+function gpt_register_navwalker(){
 if ( ! file_exists( get_template_directory() . '/class-wp-bootstrap-navwalker.php' ) ) {
     // File does not exist... return an error.
     return new WP_Error( 'class-wp-bootstrap-navwalker-missing', __( 'It appears the class-wp-bootstrap-navwalker.php file may be missing.', 'wp-bootstrap-navwalker' ) );
@@ -26,8 +26,9 @@ if ( ! file_exists( get_template_directory() . '/class-wp-bootstrap-navwalker.ph
 }
 
 
-
-add_action( 'after_setup_theme', 'register_navwalker' );
+if ( ! has_action( 'after_setup_theme', 'gpt_register_navwalker' )){
+       add_action( 'after_setup_theme', 'gpt_register_navwalker' );
+}
 
 // Required WordPress variable
 if (!isset($content_width)) {
@@ -97,51 +98,10 @@ unset($ThemeHelp);
         }
    }
 
-
-add_action('dynamic_sidebar_before', 'weplugins_execute_on_dynamic_sidebar_before_event', 10, 2);
-
-function get_logo_html() {
-    // Query for attachment with exact title "Logo"
-    $logo = get_posts(array(
-        'post_type'      => 'attachment',
-        'title'          => 'Logo',
-        'posts_per_page' => 1,
-        'post_status'    => 'inherit'
-    ));
-
-    // Exit if no logo found
-    if (empty($logo)) {
-        return '';
-    }
-
-    $logo_id = $logo[0]->ID;
-    
-    // Get image source data
-    $logo_src = wp_get_attachment_image_src($logo_id, 'full');
-    if (!$logo_src) {
-        return '';
-    }
-
-    // Extract image properties
-    list($src, $width, $height) = $logo_src;
-    
-    // Get alt text (always include, even if empty)
-    $alt_text = get_post_meta($logo_id, '_wp_attachment_image_alt', true);
-    
-    // Get attachment title (for optional title attribute)
-    $attachment_title = get_the_title($logo_id);
-    
-    // Start building image tag
-    $html = '<img src="' . esc_url($src) . '" width="' . esc_attr($width) . '" height="' . esc_attr($height) . '" alt="' . esc_attr($alt_text) . '"';
-    
-    // Add title attribute only if it exists and is not empty
-    if (!empty($attachment_title)) {
-        $html .= ' title="' . esc_attr($attachment_title) . '"';
-    }
-    
-    $html .= '>';
-
-    return $html;
+if (! has_action('dynamic_sidebar_before',
+                 'weplugins_execute_on_dynamic_sidebar_before_event');
+      add_action('dynamic_sidebar_before',
+                 'weplugins_execute_on_dynamic_sidebar_before_event', 10, 2);
 }
 
 include "deepseek/create-menus-carefully.php";
@@ -149,4 +109,3 @@ include "deepseek/get-icon-html.php";
 include "deepseek/theme-options.php";
 include "deepseek/candidate-options.php";
 include "shortcodes.php";
-//<?php echo get_logo_html(); ?>

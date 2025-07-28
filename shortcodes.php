@@ -1,14 +1,5 @@
 <?php
 
-/**
- * Enable shortcodes for menu navigation.
- */
-if ( ! has_filter( 'wp_nav_menu', 'do_shortcode' ) ) {
-    add_filter( 'wp_nav_menu', 'shortcode_unautop' );
-    add_filter( 'wp_nav_menu', 'do_shortcode', 11 );
-}
-
-
     //Create the shortcodes. 
 
     function gpt_get_candidate_title(){
@@ -74,7 +65,18 @@ function gptAddAllShortCodes(){
     add_shortcode ('donationsPageURL','gpt_get_donationsPageURL');
     add_shortcode('register_to_vote_URL','gpt_get_register_to_vote_URL');
 }
-//gptAddAllShortCodes();
-add_action('switch_theme', 'gptAddAllShortCodes');
 
+// Enable shortcodes for menu navigation.
+
+if ( ! has_filter( 'wp_nav_menu', 'shortcode_unautop' ) ) {
+       add_filter( 'wp_nav_menu', 'shortcode_unautop' );
+}
+
+if ( ! has_filter( 'wp_nav_menu', 'do_shortcode' ) ) {
+       add_filter( 'wp_nav_menu', 'do_shortcode', 11 );
+}
+
+if ( ! has_action('switch_theme', 'gptAddAllShortCodes')){
+       add_action('switch_theme', 'gptAddAllShortCodes');
+}
 ?>

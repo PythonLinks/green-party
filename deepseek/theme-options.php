@@ -9,7 +9,7 @@
 //It is now GPLd.
 
 // Add Version option to Theme Customizer
-function add_version_customizer_option($wp_customize) {
+function gpt_add_version_customizer_option($wp_customize) {
     // Add new section
     $wp_customize->add_section('organization_section', array(
         'title'    => __('Your Organization', 'text-domain'),
@@ -20,7 +20,7 @@ function add_version_customizer_option($wp_customize) {
     $wp_customize->add_setting('organization_organization_type', array(
         'default'           => 'candidate',
         'capability'        => 'edit_theme_options',
-        'sanitize_callback' => 'sanitize_organization_organization_type',
+        'sanitize_callback' => 'gpt_sanitize_organization_organization_type',
     ));
 
     // Add control with choices
@@ -92,12 +92,14 @@ function add_version_customizer_option($wp_customize) {
         'type'        => 'textarea',
     ));
 
-
 }
-add_action('customize_register', 'add_version_customizer_option');
+
+if ( ! has_action('customize_register', 'gpt_add_version_customizer_option')){
+        add_action('customize_register', 'gpt_add_version_customizer_option');
+}
 
 // Sanitization function
-function sanitize_organization_organization_type($input) {
+function gpt_sanitize_organization_organization_type($input) {
     $valid_options = array('local-party', 'state-party', 'candidate');
     return in_array($input, $valid_options) ? $input : 'candidate';
 }

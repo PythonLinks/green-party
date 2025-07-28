@@ -3,7 +3,7 @@
  * Public Domain: Green Party Site Icon Display
  * Displays the site icon with accessibility attributes and responsive sizing
  */
-function green_party_display_site_icon() {
+function gpt_display_site_icon() {
     // Exit early if no site icon exists
     if (!has_site_icon()) {
         return '';

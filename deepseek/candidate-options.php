@@ -1,5 +1,5 @@
 <?php
-function green_party_candidate_customizer($wp_customize) {
+function gpt_candidate_customizer($wp_customize) {
      $org_type = get_theme_mod('organization_option');
      //echo $org_type;
      
@@ -110,5 +110,7 @@ function green_party_candidate_customizer($wp_customize) {
         ),
     ));
 }
-add_action('customize_register', 'green_party_candidate_customizer');
+if ( ! has_action('customize_register', 'gpt__candidate_customizer')){
+       add_action('customize_register', 'gpt__candidate_customizer');
+}
 ?>

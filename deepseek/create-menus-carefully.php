@@ -11,7 +11,7 @@
 
 
 // Create a new menu if it doesn't exist
- function green_party_create_menu(
+ function gpt_create_menu(
     $menu_name = 'Green Party Menu') {
  
     // Check if the menu already exists
@@ -36,7 +36,7 @@
 }
 
 // Create a new top-level menu item (can be link or dropdown container)
-function green_party_create_top_level_item($menu_id,
+function gpt_create_top_level_item($menu_id,
                                            $title = 'Resources',
 					   $url = '#',
 					   $args = []) {
@@ -62,13 +62,13 @@ function green_party_create_top_level_item($menu_id,
 
 // Create a dropdown container.
 // This is a functon wrapper for top-level item function given above. 
-function green_party_create_dropdown_container($menu_id, $title = 'Resources', $args = []) {
-    return green_party_create_top_level_item($menu_id, $title, '#', $args);
+function gpt_create_dropdown_container($menu_id, $title = 'Resources', $args = []) {
+    return gpt_create_top_level_item($menu_id, $title, '#', $args);
 }
 
 // Create a submenu item within a dropdown
 // Create a submenu item within a dropdown
-function green_party_create_submenu_item($menu_id,
+function gpt_create_submenu_item($menu_id,
                                          $parent_id,
 					 $title = 'Documents',
 					 $url = '/documents',
@@ -101,58 +101,61 @@ function create_green_party_menu(){
     // Check if the menu already exists
     $menuExists = wp_get_nav_menu_object($menu_name);
     
-    if (!$menuExists) {
+    if ($menuExists) {
+        return;}
     // Create main menu
-    $menu_id = green_party_create_menu();
+    $menu_id = gpt_create_menu();
 
     // Top Level Home Link
-    green_party_create_top_level_item($menu_id,
+    gpt_create_top_level_item($menu_id,
                                   'Home',
     			           '/');
 				   
-    $platform_id = green_party_create_dropdown_container(
+    $platform_id = gpt_create_dropdown_container(
                  $menu_id,'Platform');
     		 
     // Add items to Platform
-    green_party_create_submenu_item($menu_id,
+    gpt_create_submenu_item($menu_id,
                                     $platform_id,
 			            '10 Key Values',
 			             '/10-key-values');
 					       
-    green_party_create_submenu_item($menu_id,
+    gpt_create_submenu_item($menu_id,
                                     $platform_id,
 			            '4 Pillars',
 			            '/4-pillars');
     
    // Take Action 
-    $take_action_id = green_party_create_dropdown_container(
+    $take_action_id = gpt_create_dropdown_container(
                  $menu_id,'Take Action');
     
-     green_party_create_submenu_item($menu_id,
+     gpt_create_submenu_item($menu_id,
                                      $take_action_id,
 				     'Register To Vote',
 				     '[register_to_vote_URL]');
-     green_party_create_submenu_item($menu_id,
+     gpt_create_submenu_item($menu_id,
                                      $take_action_id,
 				     'Volunteer',
 				     '/volunteer');
-     green_party_create_submenu_item($menu_id,
+     gpt_create_submenu_item($menu_id,
                                     $take_action_id,
 				    'Donate',
 				    '[donations_Page_URL]');     
     
     // Top Level Contact Link
-    green_party_create_top_level_item($menu_id,
-                                                 'Contact',
-					     '/contact');
+    gpt_create_top_level_item($menu_id,
+                              'Contact',
+                              '/contact');
     $locations = get_theme_mod('nav_menu_locations');
     $locations['primary-menu'] = $menu_id;
-    set_theme_mod( 'nav_menu_locations', $locations );					     
-    // register_nav_menus( 'primary', 'Green Party Menu');
-
-   }
+    set_theme_mod( 'nav_menu_locations', $locations );
+    
 }
-add_action('after_setup_theme', 'create_green_party_menu');
+
+if ( ! has_action('after_setup_theme', 'create_green_party_menu')){
+       add_action('after_setup_theme', 'create_green_party_menu');
+}
+
 
 ?>
 
